@@ -13,7 +13,7 @@ class Coin(str, Enum):
 class Data(BaseModel):
     coin: Coin
     limit: Optional[int] = 10,
-    from_date: Optional[datetime.date] = "1800-01-01",
+    from_date: Optional[datetime.date] = "1945-04-30",
     to_date: Optional[datetime.date] = datetime.date.today()
 
     class Config:
