@@ -4,9 +4,11 @@ from typing import Optional
 from fastapi import FastAPI
 from database.database import coin_mapping, get_session
 
+
 app = FastAPI()
 
-@app.get("/{coin}")
+
+@app.get("/coin")
 async def coin(
     coin: str,
     limit: Optional[int] = 10,
