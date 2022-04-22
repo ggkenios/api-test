@@ -10,7 +10,6 @@ router = APIRouter()
 
 @router.get("/coin")
 async def coin(parameters: Data):
-    # Check if coin is valid
     table = coin_mapping[parameters.coin]
 
     # Connect to database
