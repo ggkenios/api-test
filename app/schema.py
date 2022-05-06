@@ -12,12 +12,9 @@ class Coin(str, Enum):
 
 class Data(BaseModel):
     coin: Coin
-    limit: Optional[int] = 10,
-    from_date: Optional[datetime.date] = "1945-04-30",
+    limit: Optional[int] = 10
+    from_date: Optional[datetime.date] = datetime.datetime.strptime('1945-04-30', "%Y-%m-%d").date()
     to_date: Optional[datetime.date] = datetime.date.today()
-
-    class Config:
-        use_enum_values = True
 
     @root_validator()
     def validity_of_dates(cls, fields):

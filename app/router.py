@@ -1,4 +1,3 @@
-import datetime
 from fastapi import APIRouter
 
 from .schema import Data
@@ -8,7 +7,7 @@ from database.database import coin_mapping, get_session
 router = APIRouter()
 
 
-@router.get("/coin")
+@router.post("/coin")
 async def coin(parameters: Data):
     table = coin_mapping[parameters.coin]
 
